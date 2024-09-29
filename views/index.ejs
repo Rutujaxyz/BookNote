@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookNote</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    
+    <div class ="container">
+        <h1>List of Books</h1>
+        <a id="newPost8tn" href="/new">Add Book</a>
+        <ul id="postslist">
+            <% books.forEach(book=> { %>
+                <li style="padding-bottom: 100px;">
+                    <img src="https://covers.openlibrary.org/b/isbn/<%=book.isbn%>-M.jpg"/>
+                    <h2>
+                        <%=book.title%>
+                    </h2>
+                  
+                    <small>
+                        <%=book.date %>
+                    </small>
+                   
+                    <p >
+                        <%=book.content%>
+                    </p>
+                    
+                    <small> By: <%=book.author%></small>
+                    <a class="edit" href="/edit/<%=book.id%>" >Edit</a>
+                    <a class="delete" href="/delete/<%=book.id%>" >Delete</a>
+                </li>
+           <% }); %>
+        </ul>
+    </div>
+    
+</body>
+</html>
